@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import aboutImage from '@/public/assets/about/about-staff-synk.png'
-import ListContent from '@/components/utilities/about/listContent'
+import ListContent from '@/components/utilities/about/ListContent'
 import CommonButton from '@/components/utilities/CommonButton'
 import { LuDownload } from 'react-icons/lu'
 
