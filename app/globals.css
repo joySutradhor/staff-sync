@@ -1,26 +1,121 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  font-family: var(--font-work-sans), sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html{
+  scroll-behavior: smooth
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* primary color and spacing defined here */
+
+@layer utilities {
+  .primary__bg {
+    @apply bg-[#FAF1FF];
+  }
+  .secondary__bg {
+    @apply bg-white;
+  }
+
+  .gradient {
+    @apply bg-linear-to-l from-[#C469FF] to-[#28004F] text-white border border-white cursor-pointer;
+  }
+  .not__gradient {
+    @apply bg-white text-black border border-white cursor-pointer;
+  }
+
+  .text__gradient {
+    @apply text-transparent bg-clip-text bg-linear-to-r from-[#C469FF] to-[#28004F];
+  }
+
+  .bg__gradient {
+    @apply bg-linear-to-b from-[#C469FF] to-[#28004F];
+  }
+
+  .containerSpace {
+    @apply xl:max-w-[90%] 2xl:max-w-[75%] mx-auto;
+  }
+  .section__top__space {
+    @apply mt-[20vh];
+  }
+  /* base text style here */
+  h1 {
+    @apply text-6xl font-semibold;
+  }
+
+  h2 {
+    @apply text-5xl font-semibold;
+  }
+
+  h4 {
+    @apply text-3xl font-semibold text-black/70;
+  }
+  h5 {
+    @apply text-xl font-medium text-black;
+  }
+  p {
+    @apply text-lg;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* section wise syle here */
+@layer components {
+  /* Navbar styles */
+
+  .sn__menu__wrapper {
+    @apply absolute top-[5%] 2xl:w-[75%] xl:w-[90%];
+  }
+  .sn__menu__parent {
+    @apply flex justify-between items-center;
+  }
+  .sn__menu__item__parent {
+    @apply flex gap-x-5 text-lg font-semibold cursor-pointer;
+  }
+
+  /* hero content sytles here */
+  .sn__hero__main__contentParent {
+    @apply grid grid-cols-2  gap-x-[2vw] items-center;
+  }
+  .sn__hero__content__parent {
+    @apply h-[100dvh] flex justify-center items-center;
+  }
+  .sn__hero__para {
+    @apply pt-5 pb-10;
+  }
+  .sn__hero__btn__parent {
+    @apply flex gap-5;
+  }
+  .sn__hero__appInfo__parent {
+    @apply flex gap-x-16 absolute bottom-[10vh];
+  }
+
+  /* about section styles */
+  .sn_about__container {
+    @apply grid grid-cols-2 justify-between gap-x-[5vw] items-end;
+  }
+  .sn__about__background {
+    @apply h-[25vh] bg-linear-to-b from-[#C469FF] to-[#28004F]   rounded-t-xl absolute bottom-0 left-0 right-0 -z-10 w-[90%] mx-auto;
+  }
+  .sn__listContent__wrapper {
+    @apply mt-7 mb-10 pl-4;
+  }
+  .sn__listContent__parent {
+    @apply mb-5 list-disc;
+  }
+
+  /* why choose us  */
+  .sn__choose__subTitle {
+    @apply px-[20vw] pt-3;
+  }
+
+  /* testimonial */
+  .sn__testimonial__subTitle {
+    @apply px-[30vw] pt-3;
+  }
+
+  /* foooter sytles  */
+  .sn__footer__socail__icon {
+    @apply border  p-2 rounded-md hover:bg-linear-to-b from-[#C469FF] to-[#28004F] hover:text-white transition-all ease-in-out duration-300;
+  }
 }
